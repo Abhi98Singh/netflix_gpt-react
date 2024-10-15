@@ -1,0 +1,20 @@
+  -  $ For Building Netflix-GPT, we'll use create-react-app package to create our React-app
+       create-react-app provides us ready-to-use reat-app template, it creates a organised
+       strctured folder-strcture for us, it also setups testing for application
+       So If we use CRA to create react app, we dont need to bundle, build or configure our app
+       It does everthing on itself and saves our time.
+
+       Behind the scene, CRA uses webpack bundler to bundle the app...
+       Earlier, we used to parcel to bundle the app, Earlier we configured/itregated everthing  
+       into our App like parcel for bundling, Tailwind for Stling css, jest and react-testing-lib
+       for Testing
+       We should do this if we want to customize our react-app according to our Requirements
+
+
+  -  $ We have to configure Tailwind css acc to CRA
+
+
+  -  $ We'll use Google FireBase for Backend
+
+  
+  -  $ We'll use ChatGPT API
