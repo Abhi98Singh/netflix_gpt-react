@@ -1,13 +1,17 @@
 # Steps To Build Netflix-GPT
 
-- Create React App :- create first make a react-proj temp using create-react-app
+- Create React App
 - Configure TailwindCSS
+- Routing
+- Header
+- Login Form
+- Signup Form
 
 # Features of Netflix-GPT
 
     - Log in/Sign up
         - Sign in / Sign up Form
-        - Redirect to Broswse Page
+        - Redirect to Browse Page
     - Browse Page (after authentication)
         - Header
         - Main Movie
