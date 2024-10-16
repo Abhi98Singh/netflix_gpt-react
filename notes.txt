@@ -19,7 +19,48 @@
   
   -  $ We'll use ChatGPT API
 
+
   -  $ We can use Formik Library To create Forms in React apps 
      (if we have to create big and complex forms having so-many fields)
      When we have to deal with so-many fields in Form, then managing validation
      handling errors becomes very difficult
+
+  -  $ We'll use utility, lets create validate.js file and write the validation logic in it
+       if the validation fails gives us error message
+
+  -  $ For email validation, lets use  => /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/
+
+     - $ To get form-data either we can use state variables or we can use refrence of that using useRef hook
+          we need a refrences of input elements, so refrence is created by React, so we can use it
+          #useRef() creates a refrence, so we can refer the html elements using this
+
+  -  $ For buliding Authentication we'll need a Backend, for Backend we'll use "Google FireBase"
+          - We'll use Google Firebase as our Backend for User Authenticfication
+          - We can also use Firebase for feature like Sign-in-with-Google
+          - We can also deploy our Website Application to Google Firebase itself, it gives us server and hosting
+            u can host ur application on firebase
+
+        $ - FireBase gives us configuartion, so that we can use connect to the firebase/database
+
+          - Install firebase
+
+          - Creeate a file and copy-paste the firebase code
+
+          - Enable Authentication in firebase
+               - Enabel Email id/Password in Sigin method
+               - Now we can Register Users
+
+          - Lets deploy/host the application
+               - run this command to install firebase CLI => npm install -g firebase-tools
+               - then run => firebase login
+               - then initialize firenase for config firebase =>firebase init
+               - select and enter the options
+               - run the build => npm run build
+               - deploy the app on firebase => firebase deploy
+
+          - To create a user with email-password import two things "getAuth" and "createUserWithEmailAndPassword" 
+
+     -  $ Once our User Sign-up and Sign-in, we will keep his data(that obj) in Redux store, so wherever
+          We'll need the user data we can use it and navigate user to Browse page
+
+          - Lets data in create Redux store to store user obj
