@@ -64,3 +64,21 @@
           We'll need the user data we can use it and navigate user to Browse page
 
           - Lets data in create Redux store to store user obj
+
+        $  - Instead of Dispatching Actions for Sign in, Sign up pr Sign out, we will use a utility
+               given by firebase i.e "onAuthStateChanged" 
+               - this API/Utility is like an event-listner, we dont want to call this api again-again
+                    so lets call this api at root level, we want to call this api as my comp renders
+                    using useEffect
+               - We can Sign In / Sign up/ Sign out the user with using this single API
+
+          - After Signed in / Signed up , lets redirect the user to Browse page
+               for that we'll use navigate to  .. for navigation to diffrent route
+               - we can use window.location.href for navigation
+
+          - Lets add our Header on Broswe page
+
+     
+     - $ We'll use TMDB's API for movies Movies 
+          - TMDB doesnt change their API often
+          - We cannot use Netflix API bcz they are not public, we need authentication for that

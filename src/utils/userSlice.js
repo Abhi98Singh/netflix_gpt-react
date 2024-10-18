@@ -10,7 +10,7 @@ const userSlice = createSlice({
     },
     //when User Signed out, this` action will be dispatched
     removeUser: (state, action) => {
-      return state;
+      return null;
     },
   },
 });

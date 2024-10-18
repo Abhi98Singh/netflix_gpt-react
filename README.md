@@ -14,6 +14,9 @@
 - Implement Sign In / Sign up User API
 - Authentification of User
 - Created a Redux store with userSlice
+- Implemented Sign out
+- Updated Profile
+- Fetch Movies TMDB Movies
 
 # Features of Netflix-GPT
 

@@ -8,8 +8,12 @@ import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -22,10 +26,15 @@ const Login = () => {
     setIsSignInForm(!isSignInForm);
   };
 
+  //useNavigate() hook : for navigation to diffrent route
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
   //useRef() will create a refrences for email and password
   const email = useRef(null);
   const password = useRef(null);
-  // const name = useRef(null);
+  const name = useRef(null);
 
   const handleBtnClick = () => {
     //Validate the Form Data
@@ -38,6 +47,7 @@ const Login = () => {
     setErrorMessage(message);
     console.log("Email : ", email.current.value);
     console.log("Password : ", password.current.value);
+    // console.log("Name : ", name.current.value);
 
     //if message has something(string) means it is not null then return dont do anything otherwise
     if (message) return;
@@ -54,12 +64,36 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: name?.current?.value,
+            photoURL: "https://avatars.githubusercontent.com/u/88373208?v=4",
+          })
+            .then(() => {
+              //dispatch an action to update the the store : fixing the bug
+              const { uid, email, displayName, photoURL } = auth.currentUser; //currentValue/updatedValue of user
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+              //Once User Profile is updated, then navigate to browse page
+              navigate("/browse");
+            })
+            .catch((error) => {
+              // An error occurred
+              setAuthError(error.errorCode);
+            });
+
           console.log(user);
+
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
+          // const errorMessage = error.message;
           console.log(errorCode);
           setAuthError(errorCode);
           //auth/email-already-in-use
@@ -76,12 +110,28 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: name?.current?.value,
+            photoURL: "https://avatars.githubusercontent.com/u/88373208?v=4",
+          });
+          //dispatch an action to update the the store : fixing the bug
+          const { uid, email, displayName, photoURL } = auth.currentUser; //currentValue/updatedValue of user
+          dispatch(
+            addUser({
+              uid: uid,
+              email: email,
+              displayName: displayName,
+              photoURL: photoURL,
+            })
+          );
+          //then navigate to browse page
+          navigate("/browse");
           console.log(user);
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
+          // const errorMessage = error.message;
           console.log(errorCode);
           setAuthError(errorCode);
           // errorCode :- auth/invalid-credential
@@ -92,7 +142,7 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
+      <div className="absolute ">
         <img alt="netflix-bg-img" src={NETFLIX_BG_IMG_URL} />
       </div>
 
@@ -106,7 +156,7 @@ const Login = () => {
             {isSignInForm ? "Sign In" : "Sign Up"}
           </h1>
           <div className="flex flex-col items-center">
-            {authError === "auth/invalid-credential" && (
+            {isSignInForm && authError === "auth/invalid-credential" && (
               <div className=" p-3  font-semibold text-red-600 border-2 border-red-600 flex items-center ">
                 <BsExclamationOctagon className="inline  mr-2 h-5 w-5" />{" "}
                 <span>Incorrect Email or Password</span>
@@ -114,7 +164,7 @@ const Login = () => {
             )}
             {!isSignInForm && (
               <input
-                // ref={name}
+                ref={name}
                 type="text"
                 placeholder="Full Name"
                 className={
@@ -157,7 +207,7 @@ const Login = () => {
                 <span>Please enter a valid password</span>
               </div>
             )}
-            {authError === "auth/email-already-in-use" && (
+            {!isSignInForm && authError === "auth/email-already-in-use" && (
               <div className="text-yellow-500 font-semibold text-lg mt-3 flex items-center">
                 <IoWarningOutline className="inline mr-1 h-5 w-5" />{" "}
                 <span>Email Address already exists</span>
