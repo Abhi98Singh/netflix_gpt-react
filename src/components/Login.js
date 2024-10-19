@@ -79,8 +79,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              //Once User Profile is updated, then navigate to browse page
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -124,9 +122,8 @@ const Login = () => {
               photoURL: photoURL,
             })
           );
-          //then navigate to browse page
-          navigate("/browse");
-          console.log(user);
+
+          // console.log(user);
           // ...
         })
         .catch((error) => {
