@@ -1,21 +1,12 @@
-import React, { useEffect } from "react";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import Header from "./Header";
-import { API_OPTIONS } from "../utils/constants";
 
 const Browse = () => {
-  useEffect(() => {
-    //calling this API callling function in useEffect, bcz we want to call it once when the comp renders
-    getNowPlayingMovies();
-  }, []);
+  //We wanted our Browse comp to be cleaned
 
-  const getNowPlayingMovies = async () => {
-    const data = await fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?language=hi-IN&page=1",
-      API_OPTIONS
-    );
-    const json = await data.json();
-    console.log(json?.results);
-  };
+  //Custom hook : Fetchind data from TMDB website and updating the Store
+  useNowPlayingMovies();
+
   return (
     <div>
       <Header />

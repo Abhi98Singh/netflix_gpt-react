@@ -138,3 +138,15 @@
           - Our API Access token will come in Authorization 
           - We have to use options everytime, lets keep it in constants.js file
           - Let's fetch this now playing api in browse page, we dont want language-filter
+
+
+       $ - Lets put movies data into store in different slice
+          add nowPlayingMovies data to store using Dispatching
+
+
+      $ - our browse comp is looking ugly and has a lot of code, it just should render the jsx
+          lets make a custom hook for fetching data and storing in to the store...extract it
+
+           - custom hook name stats with 'use' and custom hook is normal js function
+               extract all the code from browse page and put it in our custom hook
+               and then export default it
