@@ -18,7 +18,7 @@
 - Updated Profile
 - Fetch Movies TMDB Movies
 - Bug Fix : Sign up user displayName and profile picture update
-- Bug Fix : Auth bug - if the user is logged in redirect Redirect it to browse page and vice versa
+- Bug Fix : Auth bug - if the user is logged in Redirect it to browse page and vice versa
 
 # Features of Netflix-GPT
 
