@@ -2,7 +2,7 @@ import { MdOutlineCancel } from "react-icons/md";
 import { IoWarningOutline } from "react-icons/io5";
 import { BsExclamationOctagon } from "react-icons/bs";
 import { useRef, useState } from "react";
-import { NETFLIX_BG_IMG_URL } from "../utils/constants";
+import { NETFLIX_BG_IMG_URL, PROFILE_PIC_URL } from "../utils/constants";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import {
@@ -66,7 +66,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name?.current?.value,
-            photoURL: "https://avatars.githubusercontent.com/u/88373208?v=4",
+            photoURL: PROFILE_PIC_URL,
           })
             .then(() => {
               //dispatch an action to update the the store : fixing the bug
@@ -107,24 +107,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-          updateProfile(user, {
-            displayName: name?.current?.value,
-            photoURL: "https://avatars.githubusercontent.com/u/88373208?v=4",
-          });
-          //dispatch an action to update the the store : fixing the bug
-          const { uid, email, displayName, photoURL } = auth.currentUser; //currentValue/updatedValue of user
-          dispatch(
-            addUser({
-              uid: uid,
-              email: email,
-              displayName: displayName,
-              photoURL: photoURL,
-            })
-          );
-
-          // console.log(user);
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;

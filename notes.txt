@@ -121,3 +121,20 @@
             # onAuthStateChanged() api returns a unsubscribe() function, so when this function
                os called it will remove onAuthStateChanged()
                So when our Header comp is unmounts, it will unsubscribe it
+
+          
+        - #  Always put hardcoded url, strings and constant data in our constnats.js file  
+               because we can re-use it and have to change once if we need to change it
+
+
+
+       $ - For showing movies on browse page, we'l use TMDB database API's to feth data
+
+          - For API data, first login in into TMDB website
+          - then edit profile => API 
+          - then generate API key and get the api key and registered token
+
+          - Lets move to the documentation, lets use Now playing API of Movies Lists
+          - Our API Access token will come in Authorization 
+          - We have to use options everytime, lets keep it in constants.js file
+          - Let's fetch this now playing api in browse page, we dont want language-filter

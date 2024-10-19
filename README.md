@@ -20,6 +20,9 @@
 - Bug Fix : Sign up user displayName and profile picture update
 - Bug Fix : Auth bug - if the user is logged in Redirect it to browse page and vice versa
 - Bug Fix : Unsubscibed to the onAuthStateChanged callback when comp unmounts
+- Add hardcoded values to constant file
+- Regerstered TMDB website & Created an app to key API key and access token
+- Get data from TMDB Now Playing Movies List API from Docs
 
 # Features of Netflix-GPT
 
