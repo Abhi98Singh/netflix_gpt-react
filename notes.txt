@@ -135,7 +135,6 @@
           - then generate API key and get the api key and registered token
 
           - Lets move to the documentation, lets use Now playing API of Movies Lists
-          - Our API Access token will come in Authorization 
           - We have to use options everytime, lets keep it in constants.js file
           - Let's fetch this now playing api in browse page, we dont want language-filter
 
@@ -150,3 +149,16 @@
            - custom hook name stats with 'use' and custom hook is normal js function
                extract all the code from browse page and put it in our custom hook
                and then export default it
+
+     
+      $ - For getting videos/trailer of particluar movie, we can use another api  Movies - Videos
+          - we can even check the api with partciylar id
+            this api will also give key(youtube key) to fetch the tariler form youtubbe
+
+            - trailer video contains youtube video key and with this key we'll show/render
+               this trailer on page and embed it
+
+     
+     $  - Modular Coding / Sepration of Concerns / Single Responsibilty Principle
+          Every comp has it own job, Code becomes more readable, clean, testable 
+          and modulable :- Always extract ur logic in a differnet file

@@ -23,6 +23,12 @@
 - Add hardcoded values to constant file
 - Regerstered TMDB website & Created an app to key API key and access token
 - Get data from TMDB Now Playing Movies List API from Docs
+- Custom Hook for Now Playing Movies
+- Create movieSlice
+- Update Store with movies Data
+- Planning for MainContauiner & secondary container
+- Fetch Data for Trailer Video
+- Update Store with Trailer Video Data
 
 # Features of Netflix-GPT
 
