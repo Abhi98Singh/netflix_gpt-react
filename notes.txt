@@ -114,3 +114,10 @@
                so it will redirect to user acc to his login/logout
 
           - It will fix our auth bug
+
+          $ - If our the comp is unmounted, we will unsubscribe the onAuthStateChanged()
+               because we dont want to sunscribe it everytime useEffect is called
+
+            # onAuthStateChanged() api returns a unsubscribe() function, so when this function
+               os called it will remove onAuthStateChanged()
+               So when our Header comp is unmounts, it will unsubscribe it

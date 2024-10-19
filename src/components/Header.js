@@ -27,7 +27,7 @@ const Header = () => {
 
   useEffect(() => {
     //this API will be called everytime when User Signed up/in/out :- We can do everthing from a single API
-    onAuthStateChanged(auth, (user) => {
+    const unsubscibe = onAuthStateChanged(auth, (user) => {
       //it'll check the auth of the user evertime comp re-renders
       if (user) {
         // User is signed in
@@ -47,6 +47,9 @@ const Header = () => {
         navigate("/");
       }
     });
+
+    //Unsunscibe when the comp is unmounts
+    return () => unsubscibe();
   }, []);
 
   return (
