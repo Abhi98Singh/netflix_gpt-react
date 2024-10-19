@@ -29,6 +29,7 @@
 - Planning for MainContauiner & secondary container
 - Fetch Data for Trailer Video
 - Update Store with Trailer Video Data
+- Embedded the Yotube video and make it autoplay and mute
 
 # Features of Netflix-GPT
 

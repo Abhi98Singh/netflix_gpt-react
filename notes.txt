@@ -162,3 +162,8 @@
      $  - Modular Coding / Sepration of Concerns / Single Responsibilty Principle
           Every comp has it own job, Code becomes more readable, clean, testable 
           and modulable :- Always extract ur logic in a differnet file
+
+
+     $ - To autoplay the emebeded video add => "?autoplay=1" in src link
+       - To present embed video with sound muted add "&mute=1"
+          <iframe width="420" height="345" src="http://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
