@@ -167,3 +167,17 @@
      $ - To autoplay the emebeded video add => "?autoplay=1" in src link
        - To present embed video with sound muted add "&mute=1"
           <iframe width="420" height="345" src="http://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+
+          =>  src={
+          "https://www.youtube.com/embed/" +
+          trailerVideo?.key +
+          "?autoplay=1&mute=1&loop=1&playlist=" +
+          trailerVideo?.key
+        }
+
+
+     $ - Lets build Secondary Container
+
+          - $ CDN URl for TMDB images :- https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg
+
+                         - Lets put this url in constants.js

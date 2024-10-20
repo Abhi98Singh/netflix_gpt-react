@@ -30,6 +30,13 @@
 - Fetch Data for Trailer Video
 - Update Store with Trailer Video Data
 - Embedded the Yotube video and make it autoplay and mute
+- Tailwind Classes to make Main Container look awesome
+- Build Secondary Container
+- Build Movie List
+- Build Movie Card
+- TMDB Image CDN URL
+- Made the Browsre page amazing (alike Netflix) with Tailwind CSS
+- Created Hooks like usePopularMovies Custom hook to fetch movies data, update the store and render on the page
 
 # Features of Netflix-GPT
 

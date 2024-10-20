@@ -9,7 +9,7 @@ const MainContainer = () => {
   //early return :- dont go ahead
   if (!movies) return; // if (movies === null) return; //it is one and the same thing
 
-  const mainMovie = movies[0];
+  const mainMovie = movies[13];
   console.log(mainMovie);
 
   //Destructuring :extracting the deatils from mainMavie using destrcuruing
