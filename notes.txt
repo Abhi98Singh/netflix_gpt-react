@@ -51,11 +51,16 @@
                - Now we can Register Users
 
           - Lets deploy/host the application
+               - We have already installed firebase - npm i firebase
                - run this command to install firebase CLI => npm install -g firebase-tools
                - then run => firebase login
                - then initialize firenase for config firebase =>firebase init
-               - select and enter the options
-               - run the build => npm run build
+               - select and enter the options :- 
+                              * Configure files for firebase hosting and Optionally
+                              * Use an existing proj
+                              * public dir - build
+                              and it will create 'firebase.json'
+               - run the build => npm run build (first make the build of app before deploying)
                - deploy the app on firebase => firebase deploy
 
           - To create a user with email-password import two things "getAuth" and "createUserWithEmailAndPassword" 
@@ -181,3 +186,18 @@
           - $ CDN URl for TMDB images :- https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg
 
                          - Lets put this url in constants.js
+
+
+
+    $  - We will add GPT in the next action by using Open_AI-GPT's API
+
+       -  Let's integrate GPT API's into our App
+
+       - Lets craete a Seprate page for GPT Search Page, it will have search bar
+          so GPT API will suggest us movies < Movie Recommendation System using GPT >
+
+     
+     - Lets make a button in Header comp for GPT Search page 
+     - and the make a GPTSearch comp and import it into browse page
+     - # We want to toggle b/w   <GptSearch />   Vs     <MainContainer />  <SecondaryContainer />
+  

@@ -37,6 +37,12 @@
 - TMDB Image CDN URL
 - Made the Browsre page amazing (alike Netflix) with Tailwind CSS
 - Created Hooks like usePopularMovies Custom hook to fetch movies data, update the store and render on the page
+- Make a GPT-Search Button/Link in Header when user is present using Redux
+- GPT Search Page/Comp and render it on btn click using store
+- Toggled Redndering b/w GptSearch and MainContainer+SecondaryContainer
+- GPT Search Bar
+- (BONUS) Multi-language Feature in our App using languageConstants(lang config), select tag, reudux(config slice), onchange event
+- Toggle button b/w GPTSearch and Home using Redux and Conditional Rendering
 
 # Features of Netflix-GPT
 
